@@ -1,0 +1,24 @@
+{
+  "_description": "东亚人群身体数据参考值 - 待从研究文献填充",
+  "bmi_cutoffs": {
+    "_source": "WHO Asian BMI criteria",
+    "underweight": "<18.5",
+    "normal": "18.5 - 22.9",
+    "overweight": "23.0 - 27.4",
+    "obese": "≥27.5"
+  },
+  "body_fat_percentage": {
+    "_source": "待填充 - 需要东亚人群体脂率研究数据",
+    "_note": "亚洲人群在相同BMI下体脂率高于西方人群",
+    "male": {},
+    "female": {}
+  },
+  "waist_circumference": {
+    "_source": "待填充",
+    "male_increased_risk": "≥90cm（暂用国际标准，待确认中国标准）",
+    "female_increased_risk": "≥80cm（暂用国际标准，待确认中国标准）"
+  },
+  "body_measurements": {
+    "_description": "各部位围度参考范围 - 待填充"
+  }
+}

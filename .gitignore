@@ -1,0 +1,29 @@
+# PDF source files (huge)
+fitness_PDF_source/
+pdf_source/
+failed_pdf/
+
+# Extracted markdown (large, regeneratable)
+extracted_md/
+new_pdf_md/
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# HPC/Slurm logs
+*.err
+*.out
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Plans
+*.jsonl

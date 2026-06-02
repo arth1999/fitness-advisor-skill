@@ -1,0 +1,21 @@
+{
+  "_description": "动作库 - 待从《健身教练》教材及实际训练数据填充",
+  "_source": "《健身教练》（国家体育总局职业技能鉴定教材）",
+  "_fields": {
+    "id": "动作唯一标识",
+    "name_zh": "中文名称",
+    "name_en": "英文名称（如有）",
+    "category": "杠铃主项 / 哑铃 / 固定器械 / 绳索 / 自重 / 其他",
+    "primary_muscles": ["主要目标肌群"],
+    "secondary_muscles": ["辅助肌群"],
+    "joint_action": "关节运动类型（推/拉/蹲/铰链/提/旋转）",
+    "movement_plane": "运动面（矢状面/冠状面/水平面）",
+    "difficulty": "初级/中级/高级",
+    "equipment": "所需器械",
+    "contraindications": ["禁忌症"],
+    "alternatives": ["替代动作ID"],
+    "common_errors": ["常见错误"],
+    "progression_rules": "加重/进阶规则"
+  },
+  "exercises": []
+}
