@@ -112,10 +112,20 @@ def api_get(endpoint, token=None, timeout=35):
         return None  # Timeout is expected for long polling
 
 
-def load_config():
-    if CONFIG_FILE.exists():
-        return json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+def _safe_json_load(path):
+    """Load JSON file safely, return {} on any error."""
+    try:
+        if path.exists():
+            raw = path.read_text(encoding="utf-8").strip()
+            if raw:
+                return json.loads(raw)
+    except Exception:
+        pass
     return {}
+
+
+def load_config():
+    return _safe_json_load(CONFIG_FILE)
 
 
 def save_config(cfg):
@@ -124,13 +134,16 @@ def save_config(cfg):
 
 
 def load_sessions():
-    if SESSION_FILE.exists():
-        return json.loads(SESSION_FILE.read_text(encoding="utf-8"))
-    return {}
+    return _safe_json_load(SESSION_FILE)
 
 
 def save_sessions(sessions):
-    SESSION_FILE.write_text(json.dumps(sessions, ensure_ascii=False, indent=2))
+    try:
+        tmp = SESSION_FILE.with_suffix(".tmp")
+        tmp.write_text(json.dumps(sessions, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.replace(SESSION_FILE)
+    except Exception:
+        pass  # Don't crash if can't save sessions
 
 
 # ============================================================
@@ -424,7 +437,9 @@ def run_bridge():
                 }, token, timeout=5)
 
         except Exception as e:
+            import traceback
             print(f"Loop error: {e}")
+            traceback.print_exc()
             time.sleep(3)
 
 
