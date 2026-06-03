@@ -32,6 +32,7 @@ Thumbs.db
 assets/user-data/body-log.json
 assets/user-data/workout-log.json
 assets/user-data/profile.json
+assets/user-data/fitness.db
 assets/user-data/imports/
 
 # Temp files

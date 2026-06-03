@@ -19,10 +19,23 @@
 | 第一优先 | `acsm-yundong-chufang/SKILL.md` | 减重速率、运动处方参数 |
 | 第二优先 | `nsca-cscs/SKILL.md` | 增肌速率、训练频率标准 |
 | 特殊人群 | `nsca-special-populations/SKILL.md` | 如有疾病史 |
-| 数据 | `assets/user-data/profile.json` | 用户画像 |
-| 数据 | `assets/user-data/body-log.json` | 身体数据序列 |
-| 数据 | `assets/user-data/workout-log.json` | 训练记录 |
+| 数据 | `assets/user-data/fitness.db` | SQLite 数据库（主存储） |
+| 数据 | `assets/user-data/profile.json` | 用户画像（备用） |
 | 数据 | `assets/body-reference.json` | 参考标准 |
+
+---
+
+## 数据获取
+
+运行以下命令获取分析所需数据：
+
+```bash
+python scripts/db_query.py latest              # 最新身体数据
+python scripts/db_query.py trend --days 90      # 体重/体脂趋势
+python scripts/db_query.py training --weeks 4   # 训练概况
+```
+
+如果 `fitness.db` 不存在，回退到读取 JSON 文件。
 
 ## 输出模板
 
