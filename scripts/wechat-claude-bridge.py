@@ -265,9 +265,8 @@ def call_claude_code(message: str, session_id: str) -> str:
 
     history = sessions[session_id][-10:]
 
-    # Use claude CLI in non-interactive mode
-    # IMPORTANT: -p must come LAST with the prompt immediately after
-    cmd = ["claude", "--output-format", "text", "-p"]
+    # Use claude --print with stdin pipe (most reliable non-interactive mode)
+    cmd = ["claude", "--print", "--output-format", "text"]
 
     # Strip emoji from input to avoid encoding issues
     def strip_emoji(text):
@@ -302,8 +301,11 @@ def call_claude_code(message: str, session_id: str) -> str:
     try:
         env = os.environ.copy()
         env["PYTHONIOENCODING"] = "utf-8"
+        # Pipe prompt via stdin as bytes
+        input_bytes = full_input.encode("utf-8")
         result = subprocess.run(
-            cmd + [full_input],
+            cmd,
+            input=input_bytes,
             capture_output=True,
             timeout=120,
             env=env,
@@ -359,8 +361,9 @@ def run_bridge():
 
     def on_signal(sig, frame):
         nonlocal running
-        print("\n⏸️  正在停止...")
+        print("\n⏸️  停止中... (再按一次 Ctrl+C 强制退出)")
         running = False
+        signal.signal(signal.SIGINT, signal.SIG_DFL)  # Second Ctrl+C = force quit
 
     signal.signal(signal.SIGINT, on_signal)
     signal.signal(signal.SIGTERM, on_signal)
