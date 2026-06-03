@@ -31,8 +31,5 @@ Thumbs.db
 # User data imports (contains personal health data)
 assets/user-data/imports/
 
-# WeChat bridge credentials & sessions
-assets/user-data/wechat-bridge/
-
 # Temp files
 temp_*
