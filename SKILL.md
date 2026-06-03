@@ -62,17 +62,25 @@ assets/                            ← 数据资产（食物库/动作库/身体
 | 特殊健康需求 | nsca-special-populations → SKILL.md | acsm-yundong-chufang | — |
 | 知识问答 | yundong-shenglixue → SKILL.md | advanced-nutrition-metabolism | — |
 | 执教/沟通 | zhijiaodeyuyan → SKILL.md | ace-ift → ch03 | — |
+| **记录身体数据** | 读 `templates/data-input.md` → 写入 `assets/user-data/body-log.json` | body-reference.json | profile.json |
+| **记录训练** | 读 `templates/data-input.md` → 写入 `assets/user-data/workout-log.json` | exercise-library.json | profile.json |
+| **身体数据分析** | 读 `templates/body-analysis.md` → `body-log.json` + `profile.json` | body-reference.json → 教材 | — |
+| **导入苹果健康** | 运行 `scripts/import_apple_health.py <export.zip>` | → body-log.json + workout-log.json | — |
+| **导入训记/CSV** | 运行 `scripts/import_csv_workout.py <file.csv>` | → workout-log.json | — |
 
 ### 2. 渐进式加载流程
 
 ```
 用户查询
+  → 涉及个人数据？→ 读 assets/user-data/profile.json + body-log.json + workout-log.json
   → 看 index.md 匹配意图 → 确定目标 skill
   → 读 <skill>/SKILL.md（获取核心框架 + chapter index + topic index）
   → 按 topic index 定位到具体 chapter
   → 读 <skill>/chapters/<chXX>.md（~1K tokens）
   → 需要跨域验证时，加载第二优先 skill 的相关章节
-  → 需要数据时，查询 assets/*.json
+  → 需要营养数据时，查询 assets/food-database.json
+  → 需要动作数据时，查询 assets/exercise-library.json
+  → 需要对比标准时，查询 assets/body-reference.json
   → 输出建议
 ```
 

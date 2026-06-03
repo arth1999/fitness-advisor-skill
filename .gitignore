@@ -27,3 +27,9 @@ Thumbs.db
 
 # Plans
 *.jsonl
+
+# User data imports (contains personal health data)
+assets/user-data/imports/
+
+# Temp files
+temp_*
