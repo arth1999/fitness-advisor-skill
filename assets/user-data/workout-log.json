@@ -24,5 +24,67 @@
       }]
     }]
   },
-  "sessions": []
+  "sessions": [
+    {
+      "date": "2026-06-03",
+      "start_time": "",
+      "end_time": "",
+      "duration_min": 58,
+      "source": "manual",
+      "type": "strength",
+      "focus": "拉力训练（背）",
+      "rpe_session": 7,
+      "notes": "热身做得很充分：泡沫轴SMR + YTW飞鸟激活 + 其他热身。之前斜方肌代偿问题，本次注意了沉肩后收，整体有改善",
+      "exercises": [
+        {
+          "exercise_name": "宽距高位下拉",
+          "sets": [
+            {"set": 1, "weight_kg": 15, "reps": 12, "rpe": null},
+            {"set": 2, "weight_kg": 15, "reps": 12, "rpe": null},
+            {"set": 3, "weight_kg": 30, "reps": 12, "rpe": null},
+            {"set": 4, "weight_kg": 35, "reps": 11, "rpe": null},
+            {"set": 5, "weight_kg": 35, "reps": 12, "rpe": null},
+            {"set": 6, "weight_kg": 40, "reps": 6, "rpe": null},
+            {"set": 7, "weight_kg": 35, "reps": 11, "rpe": null}
+          ]
+        },
+        {
+          "exercise_name": "颈后下拉",
+          "sets": [
+            {"set": 1, "weight_kg": 30, "reps": 10, "rpe": null},
+            {"set": 2, "weight_kg": 30, "reps": 10, "rpe": null},
+            {"set": 3, "weight_kg": 25, "reps": 12, "rpe": null},
+            {"set": 4, "weight_kg": 30, "reps": 10, "rpe": null}
+          ]
+        },
+        {
+          "exercise_name": "杠铃划船",
+          "sets": [
+            {"set": 1, "weight_kg": 15, "reps": 10, "rpe": null},
+            {"set": 2, "weight_kg": 20, "reps": 12, "rpe": null},
+            {"set": 3, "weight_kg": 20, "reps": 12, "rpe": null},
+            {"set": 4, "weight_kg": 20, "reps": 10, "rpe": null}
+          ]
+        },
+        {
+          "exercise_name": "哑铃划船（单臂）",
+          "sets": [
+            {"set": 1, "weight_kg": 6, "reps": 12, "rpe": null},
+            {"set": 2, "weight_kg": 9, "reps": 12, "rpe": null},
+            {"set": 3, "weight_kg": 10, "reps": 12, "rpe": null},
+            {"set": 4, "weight_kg": 10, "reps": 11, "rpe": null}
+          ]
+        },
+        {
+          "exercise_name": "坐姿绳索划船",
+          "sets": [
+            {"set": 1, "weight_kg": 15, "reps": 10, "rpe": null},
+            {"set": 2, "weight_kg": 30, "reps": 12, "rpe": null},
+            {"set": 3, "weight_kg": 30, "reps": 10, "rpe": null},
+            {"set": 4, "weight_kg": 30, "reps": 10, "rpe": null}
+          ]
+        }
+      ]
+    }
+  ]
 }
