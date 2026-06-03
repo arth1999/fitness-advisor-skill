@@ -78,11 +78,16 @@ def api_post(endpoint, body=None, token=None, timeout=30):
     req = urllib.request.Request(url, data=data, headers=build_headers(token), method="POST")
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return json.loads(resp.read().decode())
+            raw = resp.read().decode()
+            if not raw.strip():
+                return {}  # Empty response is success for some endpoints
+            return json.loads(raw)
     except urllib.error.HTTPError as e:
         body_text = e.read().decode() if e.fp else ""
         print(f"  API Error {e.code}: {body_text[:200]}")
         return None
+    except json.JSONDecodeError:
+        return {}  # Non-JSON response = treat as success
     except Exception as e:
         print(f"  Request failed: {e}")
         return None
@@ -93,10 +98,15 @@ def api_get(endpoint, token=None, timeout=35):
     req = urllib.request.Request(url, headers=build_headers(token), method="GET")
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return json.loads(resp.read().decode())
+            raw = resp.read().decode()
+            if not raw.strip():
+                return None
+            return json.loads(raw)
     except urllib.error.HTTPError as e:
         body_text = e.read().decode() if e.fp else ""
         print(f"  API Error {e.code}: {body_text[:200]}")
+        return None
+    except json.JSONDecodeError:
         return None
     except Exception:
         return None  # Timeout is expected for long polling
