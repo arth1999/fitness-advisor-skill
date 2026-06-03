@@ -1,0 +1,14 @@
+{
+  "user_id": "default",
+  "name": "",
+  "birth_date": "",
+  "sex": "",
+  "height_cm": null,
+  "goals": [],
+  "training_level": "beginner",
+  "injuries": [],
+  "medical_conditions": [],
+  "created_at": "",
+  "updated_at": "",
+  "_instructions": "填写你的基础信息。sex: male/female。goals 示例: [\"增肌\", \"减脂\"]。training_level: beginner/intermediate/advanced。injuries 示例: [\"左膝旧伤\"]。填好后重命名为 profile.json"
+}

@@ -1,0 +1,25 @@
+{
+  "sessions": [
+    {
+      "date": "2024-01-01",
+      "start_time": "",
+      "end_time": "",
+      "duration_min": null,
+      "source": "manual",
+      "type": "strength",
+      "focus": "",
+      "rpe_session": null,
+      "notes": "",
+      "exercises": [
+        {
+          "exercise_id": "",
+          "exercise_name": "",
+          "sets": [
+            {"set": 1, "weight_kg": null, "reps": null, "rpe": null, "rir": null}
+          ]
+        }
+      ]
+    }
+  ],
+  "_instructions": "每次训练添加一个 session。type: strength/cardio/flexibility。每个动作记录所有组的重量和次数。填好后重命名为 workout-log.json"
+}

@@ -1,0 +1,23 @@
+{
+  "entries": [
+    {
+      "date": "2024-01-01",
+      "source": "manual",
+      "weight_kg": null,
+      "body_fat_pct": null,
+      "bmi": null,
+      "waist_cm": null,
+      "hip_cm": null,
+      "chest_cm": null,
+      "arm_cm": null,
+      "thigh_cm": null,
+      "calf_cm": null,
+      "neck_cm": null,
+      "resting_hr": null,
+      "systolic_bp": null,
+      "diastolic_bp": null,
+      "notes": ""
+    }
+  ],
+  "_instructions": "每次测量添加一个 entry。只需要填你有的数据项，没有的保持 null。date 格式: YYYY-MM-DD。填好后重命名为 body-log.json"
+}
