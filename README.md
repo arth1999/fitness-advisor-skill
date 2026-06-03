@@ -86,7 +86,6 @@ python scripts/db_migrate.py
 | [Sanotsu/fetch-glycemic-index](https://github.com/Sanotsu/fetch-glycemic-index) | 血糖生成指数 (GI) 系统综述数据 | Sanotsu |
 | [Qwen2.5-VL-72B](https://github.com/QwenLM/Qwen2.5-VL) | 食物成分表 OCR 视觉语言模型 | Alibaba Cloud / Tongyi Lab |
 | [cc-connect](https://github.com/chenhg5/cc-connect) | Claude Code 到微信等多平台的消息桥接 | chenhg5 |
-| [Claude Code](https://claude.com/claude-code) | AI 编程助手，技能运行平台 | Anthropic |
 | [pypdf](https://github.com/py-pdf/pypdf) | PDF 拆分工具（教材按章分割） | py-pdf |
 | [wger-project/wger](https://github.com/wger-project/wger) | 健身数据模型参考（训练周期、身体测量 schema） | wger |
 | [Apple HealthKit](https://developer.apple.com/documentation/healthkit) | 健康数据导出格式 (export.xml)，Apple Health 导入脚本参考 | Apple Inc. |
